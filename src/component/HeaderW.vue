@@ -38,6 +38,9 @@ function getWeather() {
 </script>
 
 <style lang="scss" scoped>
+.error {
+  color: red;
+}
 h1 {
   margin-top: 50px;
 }
