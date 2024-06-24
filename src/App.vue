@@ -1,25 +1,18 @@
 <template>
-  <div class="wrapper">
-    <HeaderW></HeaderW>
+  <NavBar />
+  <div class="element">
+    <router-view />
   </div>
 </template>
 
 <script setup>
-import HeaderW from "./component/HeaderW.vue";
+import NavBar from "./component/NavBar.vue";
 </script>
 
 <style scoped>
-.error {
-  color: red;
-}
-
-.wrapper {
-  width: 900px;
-  height: 500px;
-  background: #1f0f24;
-  border-radius: 50px;
-  padding: 20px;
-  text-align: center;
-  color: white;
+.element {
+  margin-top: 15%;
+  display: flex;
+  justify-content: center;
 }
 </style>

@@ -1,22 +1,29 @@
 <template>
-  <h1>Погодное приложение</h1>
-  <p>
-    Узнать погоду в {{ city === "" ? "вашем городе" : cityName }} (Писать на
-    англ.)
-  </p>
+  <div class="wrapper">
+    <h1>Погодное приложение</h1>
+    <p>
+      Узнать погоду в {{ city === "" ? "вашем городе" : cityName }} (Писать на
+      англ.)
+    </p>
 
-  <input placeholder="Введите город" v-model="city" />
+    <input
+      placeholder="Введите город"
+      v-model="city"
+      @keyup.enter="getWeather()"
+    />
 
-  <button v-if="city !== ''" @click="getWeather()">Получить погоду</button>
-  <button disabled v-else>Введите город</button>
-  <p class="error">{{ error }}</p>
-  <Indicators :info="info"></Indicators>
+    <button v-if="city !== ''" @click="getWeather()">Получить погоду</button>
+    <button disabled v-else>Введите город</button>
+    <p class="error">{{ error }}</p>
+    <Indicators :info="info"></Indicators>
+  </div>
 </template>
 
 <script setup>
 import axios from "axios";
 import { computed, ref } from "vue";
-import Indicators from "./Indicators.vue";
+import Indicators from "@/component/Indicators.vue";
+import HeaderWeather from "@/component/HeaderWeather.vue";
 
 const info = ref(null);
 const city = ref("");
@@ -37,18 +44,27 @@ function getWeather() {
 }
 </script>
 
-<style lang="scss" scoped>
+<style>
+.wrapper {
+  width: auto;
+  height: auto;
+  background: #1f0f24;
+  border-radius: 50px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
 .error {
   color: red;
 }
-h1 {
+.wrapper h1 {
   margin-top: 50px;
 }
 
-p {
+.wrapper p {
   margin-top: 20px;
 }
-input {
+.wrapper input {
   margin-top: 30px;
   background: transparent;
   border: 0;
@@ -59,16 +75,16 @@ input {
   outline: none;
 }
 
-input:focus {
+.wrapper input:focus {
   border-bottom-color: #6e2d7d;
 }
 
-button:disabled {
+.wrapper button:disabled {
   background: #796427;
   cursor: not-allowed;
 }
 
-button {
+.wrapper button {
   background: #e3bc4b;
   color: #fff;
   border-radius: 10spx;
@@ -79,7 +95,7 @@ button {
   transition: transform 500ms ease;
 }
 
-button:hover {
+.wrapper button:hover {
   transform: scale(1.1) translateY(-5px);
 }
 </style>
