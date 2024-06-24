@@ -11,16 +11,21 @@
 import { computed } from "vue";
 
 const props = defineProps({
-  info: Object,
+  info: {
+    type: Object,
+    required: true,
+  },
 });
 
-const showTemp = computed(() => "Температура: " + props.info.temp);
-const showFeelsLike = computed(() => "Ощущается как: " + props.info.feels_like);
+const showTemp = computed(() => "Температура: " + props.info.main.temp);
+const showFeelsLike = computed(
+  () => "Ощущается как: " + props.info.main.feels_like
+);
 const showMinTemp = computed(
-  () => "Минимальная температура: " + props.info.temp_min
+  () => "Минимальная температура: " + props.info.main.temp_min
 );
 const showMaxTemp = computed(
-  () => "Максимальная температура: " + props.info.temp_max
+  () => "Максимальная температура: " + props.info.main.temp_max
 );
 </script>
 

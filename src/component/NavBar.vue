@@ -1,11 +1,43 @@
 <template>
   <div class="navbar">
-    <button @click="$router.push('/')">Main</button>
-    <button @click="$router.push('/WeatherPage')">Weather</button>
+    <my-button :style="getButtonStyle('/')" @click="handleClick('/')"
+      >Main</my-button
+    >
+    <my-button
+      :style="getButtonStyle('/WeatherPage')"
+      @click="handleClick('/WeatherPage')"
+      >Weather</my-button
+    >
+    <my-button
+      :style="getButtonStyle('/CalculatorPage')"
+      @click="handleClick('/CalculatorPage')"
+      >Calculator</my-button
+    >
   </div>
 </template>
 
-<script></script>
+<script setup>
+//этот код со стилями для кнопок написал chatGPT ;(
+
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import MyButton from "@/component/UI/MyButton.vue";
+
+const activeRoute = ref("/");
+const router = useRouter();
+
+const handleClick = (route) => {
+  activeRoute.value = route;
+  router.push(route);
+};
+
+const getButtonStyle = (route) => {
+  return {
+    backgroundColor: activeRoute.value === route ? "black" : "#e3bc4b",
+    color: activeRoute.value === route ? "#e3bc4b" : "black",
+  };
+};
+</script>
 
 <style>
 .navbar {
@@ -17,18 +49,7 @@
   justify-content: flex-end;
   align-items: center;
 }
-.navbar button {
-  background: #e3bc4b;
-  color: #fff;
-  border-radius: 10spx;
-  border: 2px solid #b99935;
-  padding: 10px 15px;
-  margin-left: 20px;
-  cursor: pointer;
-  transition: transform 500ms ease;
-  margin: 0 10px;
-}
-.navbar button:hover {
-  transform: scale(1.1) translateY(-2px);
+my-button {
+  margin: 0 5px;
 }
 </style>

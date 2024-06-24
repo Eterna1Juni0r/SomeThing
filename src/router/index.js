@@ -1,6 +1,7 @@
 import { createRouter, createMemoryHistory } from "vue-router";
 import WeatherPage from "@/pages/WeatherPage.vue";
 import MainPage from "@/pages/MainPage.vue";
+import CalculatorPage from "@/pages/CalculatorPage.vue";
 
 const routes = [
   {
@@ -10,6 +11,10 @@ const routes = [
   {
     path: "/WeatherPage",
     component: WeatherPage,
+  },
+  {
+    path: "/CalculatorPage",
+    component: CalculatorPage,
   },
 ];
 
