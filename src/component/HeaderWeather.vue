@@ -1,5 +1,5 @@
 <template>
-  <h1>Погодное приложение</h1>
+  <h1>Weather-In-Your-City</h1>
   <p>
     Узнать погоду в {{ city === "" ? "вашем городе" : cityName }} (Писать на
     англ.)
@@ -9,6 +9,7 @@
     placeholder="Введите город"
     v-model.trim="city"
     @keyup.enter="$emit('gWeather', city)"
+    maxlength="20"
   />
 
   <my-button v-if="city !== ''" @click="$emit('gWeather', city)">
@@ -20,6 +21,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import MyButton from "./UI/MyButton.vue";
+
 const city = ref("");
 const cityName = computed(() => `"${city.value}"`);
 </script>

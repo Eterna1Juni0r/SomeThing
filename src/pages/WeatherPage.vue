@@ -14,7 +14,8 @@ import HeaderWeather from "@/component/HeaderWeather.vue";
 
 const info = ref(null);
 const error = ref("");
-
+//как обработать тут ошибку чтобы в случае если города нет в базе (то бишь вбили 'уиуеиа'),
+//он мне отправил данные на константу error, вооооот (Маским выручай)
 const getWeather = (city) => {
   if (city.length < 2) {
     error.value = "Нужно название более одного символа";
@@ -36,6 +37,7 @@ const getWeather = (city) => {
   color: red;
 }
 .wrapper {
+  max-width: 500px;
   width: auto;
   height: auto;
   background: #1f0f24;

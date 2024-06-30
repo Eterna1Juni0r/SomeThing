@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
 *{
     
     margin: 0;
@@ -8,7 +10,12 @@ body{
     min-height: 100vh;   
     background: linear-gradient(185deg, rgba(255,239,0,1) 0%, rgba(31,0,129,1) 92%);
 }
-/* #app{
-    display: flex;
-
-} */
+h1{
+    font-family: "Nabla", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "EDPT" 100,
+      "EHLT" 12;
+}

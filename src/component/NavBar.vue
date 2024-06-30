@@ -13,11 +13,16 @@
       @click="handleClick('/CalculatorPage')"
       >Calculator</my-button
     >
+    <my-button
+      :style="getButtonStyle('/DnDPage')"
+      @click="handleClick('/DnDPage')"
+      >DnD</my-button
+    >
   </div>
 </template>
 
 <script setup>
-//этот код со стилями для кнопок написал chatGPT ;(
+//весь скрипт со стилями написал chatGPT потому что я лох позорный ;(
 
 import { ref } from "vue";
 import { useRouter } from "vue-router";
