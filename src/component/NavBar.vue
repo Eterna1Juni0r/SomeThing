@@ -11,7 +11,7 @@
     <my-button
       :style="getButtonStyle('/CalculatorPage')"
       @click="handleClick('/CalculatorPage')"
-      >Calculator</my-button
+      >Crypto</my-button
     >
     <my-button
       :style="getButtonStyle('/DnDPage')"

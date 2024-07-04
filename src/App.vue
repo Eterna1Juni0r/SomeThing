@@ -1,5 +1,5 @@
 <template>
-  <NavBar />
+  <NavBar style="position: sticky; top: 0px; left: 0px" />
   <div class="element">
     <router-view />
   </div>
@@ -13,6 +13,6 @@ import NavBar from "./component/NavBar.vue";
 .element {
   margin-top: 15%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 </style>

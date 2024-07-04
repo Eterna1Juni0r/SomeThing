@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="base">
     <h1>My mini-project</h1>
     <p>1. Первый проект это про погоду</p>
     <p>вбиваете название города на английском получаете температуру</p>
@@ -10,4 +10,9 @@
 export default {};
 </script>
 
-<style></style>
+<style>
+.base {
+  display: flex;
+  align-items: center;
+}
+</style>

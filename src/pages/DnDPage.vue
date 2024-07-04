@@ -1,6 +1,8 @@
 <template>
-  <div class="btn-place">
-    <Cube v-for="dCube in dCubes" :dCube="dCube" />
+  <div class="base">
+    <div class="btn-place">
+      <Cube v-for="dCube in dCubes" :dCube="dCube" />
+    </div>
   </div>
 </template>
 
@@ -48,6 +50,11 @@ const dCubes = ref([
 </script>
 
 <style lang="scss" scoped>
+.base {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .btn-place {
   display: flex;
   flex-wrap: wrap;

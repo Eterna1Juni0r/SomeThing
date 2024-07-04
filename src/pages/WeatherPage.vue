@@ -1,8 +1,10 @@
 <template>
-  <div class="wrapper">
-    <HeaderWeather @gWeather="getWeather" />
-    <p class="error">{{ error }}</p>
-    <Indicators :info="info" />
+  <div class="base">
+    <div class="wrapper">
+      <HeaderWeather @gWeather="getWeather" />
+      <p class="error">{{ error }}</p>
+      <Indicators :info="info" />
+    </div>
   </div>
 </template>
 
@@ -36,7 +38,13 @@ const getWeather = (city) => {
   margin-top: 20px;
   color: red;
 }
+.base {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .wrapper {
+  align-items: center;
   max-width: 500px;
   width: auto;
   height: auto;
