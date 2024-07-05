@@ -19,6 +19,8 @@ import CryptoInput from "@/component/CryptoInput.vue";
 import CryptoConvert from "crypto-convert";
 import { ref } from "vue";
 
+/* Странный баг, если нажать на шапке крипто потом другую кнопку и обратно крипто, сайт ломается. Я хз почему*/
+
 const converty = new CryptoConvert();
 const amount = ref(1);
 const cryptoFirst = ref("");
