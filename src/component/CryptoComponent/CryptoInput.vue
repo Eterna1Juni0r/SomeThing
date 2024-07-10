@@ -7,10 +7,11 @@
   />
   <br />
   <my-button @click="convert()">Конвертировать</my-button>
+  <my-button @click="favorite()">В избранное</my-button>
 </template>
 
 <script setup>
-import MyButton from "./UI/MyButton.vue";
+import MyButton from "@/component/UI/MyButton.vue";
 
 const props = defineProps({
   changeAmount: {
@@ -18,6 +19,10 @@ const props = defineProps({
     required: true,
   },
   convert: {
+    type: Function,
+    required: true,
+  },
+  favorite: {
     type: Function,
     required: true,
   },

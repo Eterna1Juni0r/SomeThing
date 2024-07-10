@@ -7,23 +7,23 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 const props = defineProps({
   setCrypto: {
     type: Function,
     required: true,
   },
+  cryptoNum: {
+    type: String,
+    required: true,
+  },
 });
 
-const current = ref("");
-
-function selectItem(val) {
+const selectItem = (val) => {
   props.setCrypto(val);
-  current.value = val;
-}
+};
 
 const getButtonStyle = (val) => {
-  return { backgroundColor: current.value === val ? "#24043e" : "#1a032d" };
+  return { backgroundColor: props.cryptoNum === val ? "#24043e" : "#1a032d" };
 };
 </script>
 

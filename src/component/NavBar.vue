@@ -32,8 +32,12 @@ const activeRoute = ref("/");
 const router = useRouter();
 
 const handleClick = (route) => {
-  activeRoute.value = route;
-  router.push(route);
+  try {
+    activeRoute.value = route;
+    router.push(route);
+  } catch (error) {
+    alert("Ошибка" + error);
+  }
 };
 
 const getButtonStyle = (route) => {
